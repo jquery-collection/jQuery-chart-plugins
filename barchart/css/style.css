@@ -1,0 +1,123 @@
+@font-face {
+	font-family: 'SurfaceMedium';
+	src: url('../fonts/surface-medium-webfont.eot');
+	src: url('../fonts/surface-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/surface-medium-webfont.woff') format('woff'),
+		 url('../fonts/surface-medium-webfont.ttf') format('truetype'),
+		 url('../fonts/surface-medium-webfont.svg#SurfaceMedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+h1 {
+	font-family: 'SurfaceMedium';
+	font-weight: normal;
+}
+
+/* ------------------------------ */
+/* bar chart position and dimensions */
+
+#bar-chart1 {
+	border: 1px solid #9C9EA0;
+	border-radius: 8px;
+	box-shadow: 0 0 3px 3px #cdcdcd; -webkit-box-shadow: 0 0 3px 3px #cdcdcd; -moz-box-shadow: 0 0 3px 3px #cdcdcd; -o-box-shadow: 0 0 3px 3px #cdcdcd; -ms-box-shadow: 0 0 3px 3px #cdcdcd;
+}
+#bar-chart1, 
+#popup-open {
+	position: absolute; top: 100px; left: 100px; 
+	width: 400px; height: 300px;
+	overflow: hidden;
+}
+#popup-open {
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+}
+
+/* ------------------------------ */
+/* large bar chart position and dimensions */
+
+#bar-chart2 {
+	position: absolute; top: 50px; left: 50px; 
+	width: 800px; height: 600px;
+	overflow: hidden;
+	border: 1px solid #9C9EA0;
+	border-radius: 8px;
+	box-shadow: 0 0 3px 3px #cdcdcd; -webkit-box-shadow: 0 0 3px 3px #cdcdcd; -moz-box-shadow: 0 0 3px 3px #cdcdcd; -o-box-shadow: 0 0 3px 3px #cdcdcd; -ms-box-shadow: 0 0 3px 3px #cdcdcd;
+}
+
+/* ------------------------------ */
+/* regular and large bar chart: animate the bars */
+
+.bar1-mask1, .bar1-mask2, .bar1-mask3 { animation: animate-bar-mask 1s ease-in forwards; -moz-animation: animate-bar-mask 1s ease-in forwards; -webkit-animation: animate-bar-mask 1s ease-in forwards; -o-animation: animate-bar-mask 1s ease-in forwards; }
+.bar2-mask1, .bar2-mask2, .bar2-mask3 { animation: animate-bar-mask 1s ease-in .5s forwards; -moz-animation: animate-bar-mask 1s ease-in .5s forwards; -webkit-animation: animate-bar-mask 1s ease-in .5s forwards; -o-animation: animate-bar-mask 1s ease-in .5s forwards; }
+.bar3-mask1, .bar3-mask2, .bar3-mask3 { animation: animate-bar-mask 1s ease-in 1s forwards; -moz-animation: animate-bar-mask 1s ease-in 1s forwards; -webkit-animation: animate-bar-mask 1s ease-in 1s forwards; -o-animation: animate-bar-mask 1s ease-in 1s forwards; }
+
+@keyframes animate-bar-mask {
+	from { height: ; }
+	to { height: 0; }
+}
+@-moz-keyframes animate-bar-mask {
+	from { height: ; }
+	to { height: 0; }
+}
+@-webkit-keyframes animate-bar-mask {
+	from { height: ; }
+	to { height: 0; }
+}
+@-o-keyframes animate-bar-mask {
+	from { height: ; }
+	to { height: 0; }
+}
+
+/* ------------------------------ */
+/* regular and large bar chart: fade-in the bar values */
+
+.bar1label1, .bar1label2, .bar1label3 { animation: fadein-barvalues 1s linear .5s backwards; -moz-animation: fadein-barvalues 1s linear .5s backwards; -webkit-animation: fadein-barvalues 1s linear .5s backwards; -o-animation: fadein-barvalues 1s linear .5s backwards; }
+.bar2label1, .bar2label2, .bar2label3 { animation: fadein-barvalues 1s linear 1s backwards; -moz-animation: fadein-barvalues 1s linear 1s backwards; -webkit-animation: fadein-barvalues 1s linear 1s backwards; -o-animation: fadein-barvalues 1s linear 1s backwards; }
+.bar3label1, .bar3label2, .bar3label3 { animation: fadein-barvalues 1s linear 1.5s backwards; -moz-animation: fadein-barvalues 1s linear 1.5s backwards; -webkit-animation: fadein-barvalues 1s linear 1.5s backwards; -o-animation: fadein-barvalues 1s linear 1.5s backwards; }
+
+@keyframes fadein-barvalues {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-moz-keyframes fadein-barvalues {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-webkit-keyframes fadein-barvalues {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-o-keyframes fadein-barvalues {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+/* ------------------------------ */
+
+#popup-wrapper {
+	position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; display: none; z-index: 10;
+}
+
+#popup-close {
+	position: absolute;
+	display: block;
+	padding: 7px 1px 9px 1px;
+	font-size: 30px;
+	right: 30px;
+	top: 20px;
+	border-radius: 30px;
+	width: 37px;
+	text-align: center;
+	box-shadow: 1px 1px 10px #EFEFEF;
+	border: 1px solid #EAEAEA;
+	color: #999;
+	text-decoration: none;
+	cursor: pointer;
+	margin: 0;
+	font: 26px/23px 'SurfaceMedium';
+}
