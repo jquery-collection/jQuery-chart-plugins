@@ -3,8 +3,6 @@ $(document).ready(function(){
 	// ------------------------------
 	// fade in the elements and animate the pie charts.
 	
-	// the initial hidden state of these elements are set in style_adjustments
-	
 	$('#pie-chart1').kineticPieChart({ 
 		color: '#2B3A49', 
 		radius: 72, 
