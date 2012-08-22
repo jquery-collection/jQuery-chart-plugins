@@ -1,3 +1,3 @@
-jQuery-chart-plugins
+jQuery chart plugins
 ====================
-jQuery plugins I wrote for an iPad app, to draw scalable bar and line charts and to draw pie charts
+jQuery plugins to draw scalable bar and line charts and to draw pie charts. Written for an iPad app project but should work cross-browser. Distributed with permission.
