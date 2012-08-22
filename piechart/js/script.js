@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	// ------------------------------
-	// fade in the elements and animate the pie charts.
+	// animate the pie charts and fade in the text.
 	
 	$('#pie-chart1').kineticPieChart({ 
 		color: '#2B3A49', 
