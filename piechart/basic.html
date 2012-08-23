@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pie chart demo</title>
+<style>
+#my-chart {
+	position: absolute; top: 50px; left: 50px;
+	width: 140px; height: 140px;
+}
+</style>
+</head>
+<body>
+
+    <div id="my-chart"></div>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/kinetic-v3.10.3.min.js"></script><!-- 3.10.4 has a strange bug where custom shapes that are rotated are redrawn without the rotation (eg. when redraw happens on hover) -->
+<script src="js/jquery.kineticjs.piechart.js"></script>
+<script>
+$(document).ready(function(){
+
+	$('#my-chart').kineticPieChart({ 
+		color: '#2B3A49', 
+		radius: 72, 
+		percentage: 70.5, 
+		label1: '72%',
+	});
+    
+});
+</script>
+
+</body>
+</html>

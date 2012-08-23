@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Jquery chart plugins : jQuery plugins to draw scalable bar and line charts and to draw pie charts. Written for an iPad app project but should work cross-browser. Distributed with permission." />
+    <meta name="description" content="jQuery chart plugins : jQuery plugins to draw scalable bar and line charts and to draw pie charts" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Jquery chart plugins</title>
+    <title>jQuery chart plugins</title>
   </head>
 
   <body>
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/liquidstateltd/jQuery-chart-plugins">View on GitHub</a>
 
-          <h1 id="project_title">Jquery chart plugins</h1>
-          <h2 id="project_tagline">jQuery plugins to draw scalable bar and line charts and to draw pie charts. Written for an iPad app project but should work cross-browser. Distributed with permission.</h2>
+          <h1 id="project_title">jQuery chart plugins</h1>
+          <h2 id="project_tagline">jQuery plugins to draw scalable bar and line charts and to draw pie charts</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/liquidstateltd/jQuery-chart-plugins/zipball/master">Download this project as a .zip file</a>
@@ -31,11 +31,193 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Demo Pages</h3>
 
-        <p><a href="/jQuery-chart-plugins/barchart/index.html">Bar chart</a></p>
-        <p><a href="/jQuery-chart-plugins/linechart/index.html">Line chart</a></p>
-        <p><a href="/jQuery-chart-plugins/piechart/index.html">Pie chart</a></p>
+        <h3>Introduction</h3>
+		<p>The plugins were written for an iPad app project, so these examples work cross-browser except for the CSS animations in IE. Distributed with permission.</p>
+
+        <h3>Demo Pages</h3>
+        
+        <ul>
+        <li><a href="#barchart">Bar chart</a></li>
+        <li><a href="#linechart">Line chart</a></li>
+        <li><a href="#piechart">Pie chart</a></li>
+        </ul>
+
+        <h4><a name="barchart"></a>Bar chart</h4>
+
+        <h5>How to use</h5>
+
+        <p>1. Reference jQuery and the plugin, and add the chart element in HTML:</p>
+        <pre><code>
+&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.barchart.js"&gt;&lt;/script&gt;
+
+&lt;div id="my-chart"&gt;&lt;/div&gt;
+        </code></pre>
+
+        <p>2. Add the chart position and dimensions in CSS:</p>
+        <pre><code>
+#my-chart {
+	position: absolute; top: 100px; left: 100px; 
+	width: 400px; height: 300px;
+	overflow: hidden;
+	border: 1px solid #9C9EA0;
+}
+        </code></pre>
+
+        <p>3. Call the chart function from JavaScript:</p>
+        <pre><code>
+$(document).ready(function(){
+
+	$('#my-chart').barchart({ 
+		'color': '#000',
+		'backgroundColor': '#fff',
+
+		'width': 400,
+		'height': 300,
+		
+		'headerText': 'Header text',
+
+		// additionalText: can contain additional values, must specify the text, size, alignment 
+		// and x,y position
+		'additionalText': [ [ ['Additional text'], [7], ['right'], [50], [50] ], 
+			  [ ['More additional text'], [6], ['right'], [50], [65] ] ], 
+		
+		'plotAreaLeft': 80,
+		'plotAreaRight': 350,
+		'plotAreaTop': 100,
+		'plotAreaBottom': 260,
+		
+		'axisColor': '#000',
+		
+		'yAxisValues': [ '0', 
+			'1', 
+			'2', 
+			'3', 
+			'4', 
+			'5', 
+			'6', 
+			'7', 
+			'8', 
+			'9', 
+			'10' ],
+		'yLabel': 'Label',
+		'yMaxValue': 10,
+	  
+		'xAxisValues': [ 'Bar one', 
+			  'Bar two', 
+			  'Bar three' ],
+
+		// dataValues: can contain 1 or more data planes, must specify the value and the label 
+		'dataValues': [ [ [ 5, '5' ], [ 5.5, '5.5' ], [ 5.9, '5.9' ] ], 
+			  [ [ 3.4, '3.4'], [ 3.8, '3.8'], [ 4, '4'] ], 
+			  [ [ 6.3, '6.3'], [ 7, '7'], [ 7.2, '7.2'] ] ],
+
+		'planeBarColors': [ '#7AA6D2', '#838D96', '#2B3A49' ], 
+		'planeLegend': [ 'Plane one', 'Plane two', 'Plane three' ], 
+	});
+    
+});
+        </code></pre>
+
+        <p>4. Hide the animation masks in CSS for the basic demo:</p>
+        <pre><code>
+.barmask { display: none; }
+.barlabel { opacity: 1; }
+        </code></pre>
+
+		<h5>Demo</h5>
+        <p><a href="/jQuery-chart-plugins/barchart/basic.html">See this code in action</a></p>
+        <p><a href="/jQuery-chart-plugins/barchart/index.html">View a demo with animation</a></p>
+        
+        <h4><a name="linechart"></a>Line chart</h4>
+        <h5>How to use</h5>
+
+        <p>1. Reference jQuery and the plugin, and add the chart element in HTML:</p>
+        <pre><code>
+&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.linechart.js"&gt;&lt;/script&gt;
+
+&lt;div id="my-chart"&gt;&lt;/div&gt;
+        </code></pre>
+
+        <p>2. Add the chart position and dimensions in CSS:</p>
+        <pre><code>
+#my-chart {
+	width: 350px; height: 300px;
+	position: absolute; top: 100px; left: 100px; 
+	overflow: hidden;
+	border: 1px solid #9C9EA0;
+}
+        </code></pre>
+
+        <p>3. Call the chart function from JavaScript:</p>
+        <pre><code>
+$(document).ready(function(){
+
+	$('#my-chart').linechart({ 
+		'width': 350,
+		'height': 300,
+
+		// imageLayers: can contain 1 or more images, must specify the source, width, height 
+		// and x,y position
+		'imageLayers': [ [ ['img/data1.svg'], [220], [120], [80], [100] ],
+			[ ['img/data2.svg'], [220], [120], [80], [100] ] ],
+
+		'planeColors': [ '#7AA6D2', '#2B3A49' ], 
+		'planeLegend': [ 'Legend one', 'Legend two' ], 
+
+		'legendAtBottom': true,
+	});
+    
+});
+        </code></pre>
+
+        <p>4. Hide the animation masks in CSS for the basic demo:</p>
+        <pre><code>
+.revealmask { visibility: hidden; }
+        </code></pre>
+
+		<h5>Demo</h5>
+        <p><a href="/jQuery-chart-plugins/linechart/basic.html">See this code in action</a></p>
+        <p><a href="/jQuery-chart-plugins/linechart/index.html">View the demo with animation</a></p>
+
+        <h4><a name="piechart"></a>Pie chart</h4>
+        <h5>How to use</h5>
+
+        <p>1. Reference jQuery, KineticJS and the plugin, and add the chart element in HTML:</p>
+        <pre><code>
+&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script src="js/kinetic-v3.10.3.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.piechart.js"&gt;&lt;/script&gt;
+
+&lt;div id="my-chart"&gt;&lt;/div&gt;
+        </code></pre>
+
+        <p>2. Add the chart position and dimensions in CSS:</p>
+        <pre><code>
+#my-chart {
+	position: absolute; top: 50px; left: 50px;
+	width: 140px; height: 140px;
+}
+        </code></pre>
+
+        <p>3. Call the chart function from JavaScript:</p>
+        <pre><code>
+$(document).ready(function(){
+
+	$('#my-chart').kineticPieChart({ 
+		color: '#2B3A49', 
+		radius: 72, 
+		percentage: 70.5, 
+		label1: '72%',
+	});
+    
+});
+        </code></pre>
+
+		<h5>Demo</h5>
+        <p><a href="/jQuery-chart-plugins/piechart/basic.html">See this code in action</a></p>
 
       </section>
     </div>
