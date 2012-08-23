@@ -168,6 +168,44 @@ $(document).ready(function(){
 	$('#my-chart').linechart({ 
 		'width': 350,
 		'height': 300,
+		
+		'headerText': 'Header text',
+
+		// additionalText: can contain additional values, must specify the text, size, alignment 
+		// and x,y position
+		'additionalText': [ [ ['Additional text'], [7], ['right'], [250], [50] ], 
+			  [ ['More additional text'], [6], ['right'], [250], [65] ] ], 
+		
+		'plotAreaLeft': 80,
+		'plotAreaRight': 300,
+		'plotAreaTop': 100,
+		'plotAreaBottom': 220,
+		
+		'axisColor': '#9C9C9B',
+		
+		'yAxisValues': [ '0', 
+			'1', 
+			'2', 
+			'3', 
+			'4', 
+			'5', 
+			'6' ],
+		'yLabel': 'y Label',
+		'yMaxValue': 7,
+	  
+		'xAxisValues': [ '0', 
+			'1', 
+			'2', 
+			'3', 
+			'4', 
+			'5', 
+			'6', 
+			'7', 
+			'8', 
+			'9', 
+			'10' ],
+		'xLabel': 'x Label',
+		'xMaxValue': 24, 
 
 		// imageLayers: can contain 1 or more images, must specify the source, width, height 
 		// and x,y position
