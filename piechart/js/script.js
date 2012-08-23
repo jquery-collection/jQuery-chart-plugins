@@ -6,7 +6,7 @@ $(document).ready(function(){
 	$('#pie-chart1').kineticPieChart({ 
 		color: '#2B3A49', 
 		radius: 72, 
-		percentage: 70.5, 
+		percentage: 72, 
 		label1: '72%',
 	});
 
